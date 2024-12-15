@@ -19,8 +19,4 @@ userBtn.addEventListener('click', function(){
 })
 
 
-// admin product  ko line180
-// let closeBtn = document.querySelector('#close-form');
-// closeBtn.addEventListener('click',()=>{
-//     document.querySelector('.update-container').style.display='none';
-// })
+

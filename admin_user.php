@@ -54,40 +54,54 @@ if (isset($_GET['delete'])) {
     <div style="width: 90%; max-width: 600px; height: 2px; background-color: #ddd; margin: 20px auto;"></div>
 
     <section class="message-container" style="text-align: center; padding: 20px;">
-        <h1 class="title" style="font-size: 24px; margin-bottom: 20px;">Total User Accounts</h1>
-        <div class="box-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 20px; padding: 20px;">
-            <?php
-            $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die("Query failed");
-            if (mysqli_num_rows($select_users) > 0) {
-                while ($fetch_users = mysqli_fetch_assoc($select_users)) {
-                    ?>
-                    <div class="box" style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 15px; text-align: center;">
-                        <p style="margin: 10px 0; font-size: 16px;">User ID: <span style="font-weight: bold;"><?php echo $fetch_users['id']; ?></span></p>
-                        <p style="margin: 10px 0; font-size: 16px;">Name: <span style="font-weight: bold;"><?php echo $fetch_users['name']; ?></span></p>
-                        <p style="margin: 10px 0; font-size: 16px;">Email: <span style="font-weight: bold;"><?php echo $fetch_users['email']; ?></span></p>
-                        <p style="margin: 10px 0; font-size: 16px;">User Type: 
-                            <span style="font-weight: bold; color: <?php echo ($fetch_users['user_type'] == 'admin') ? 'orange' : 'black'; ?>;">
+    <h1 class="title" style="font-size: 24px; margin-bottom: 20px;">Total User Accounts</h1>
+    <div class="table-container" style="padding: 20px;">
+        <table style="width: 100%; border-collapse: collapse; margin: auto; font-size: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <thead>
+                <tr style="background-color: #f4f4f4; text-align: left; border-bottom: 2px solid #ddd;">
+                    <th style="padding: 12px; border: 1px solid #ddd;">User ID</th>
+                    <th style="padding: 12px; border: 1px solid #ddd;">Name</th>
+                    <th style="padding: 12px; border: 1px solid #ddd;">Email</th>
+                    <th style="padding: 12px; border: 1px solid #ddd;">User Type</th>
+                    <th style="padding: 12px; border: 1px solid #ddd;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die("Query failed");
+                if (mysqli_num_rows($select_users) > 0) {
+                    while ($fetch_users = mysqli_fetch_assoc($select_users)) {
+                        ?>
+                        <tr style="border-bottom: 1px solid #ddd; text-align: center;">
+                            <td style="padding: 12px; border: 1px solid #ddd;"><?php echo $fetch_users['id']; ?></td>
+                            <td style="padding: 12px; border: 1px solid #ddd;"><?php echo $fetch_users['name']; ?></td>
+                            <td style="padding: 12px; border: 1px solid #ddd;"><?php echo $fetch_users['email']; ?></td>
+                            <td style="padding: 12px; border: 1px solid #ddd; color: <?php echo ($fetch_users['user_type'] == 'admin') ? 'orange' : 'black'; ?>;">
                                 <?php echo $fetch_users['user_type']; ?>
-                            </span>
-                        </p>
-                        <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" 
-                           onclick="return confirm('Delete this user?');" 
-                           style="display: inline-block; margin-top: 10px; padding: 8px 15px; background-color: red; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; cursor: pointer; transition: 0.3s;">
-                           Delete
-                        </a>
-                    </div>
-                    <?php
+                            </td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">
+                                <a href="admin_user.php?delete=<?php echo $fetch_users['id']; ?>" 
+                                   onclick="return confirm('Delete this user?');" 
+                                   style="padding: 8px 15px; background-color: red; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; transition: 0.3s;">
+                                   Delete
+                                </a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                } else {
+                    echo '
+                    <tr>
+                        <td colspan="5" style="padding: 20px; text-align: center; color: #555; font-size: 18px;">No users found!</td>
+                    </tr>
+                    ';
                 }
-            } else {
-                echo '
-                <div class="empty" style="text-align: center; font-size: 18px; margin: 20px 0; color: #555;">
-                    <p>No users found!</p>
-                </div>
-                ';
-            }
-            ?>
-        </div>
-    </section>
+                ?>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 
     <div style="width: 90%; max-width: 600px; height: 2px; background-color: #ddd; margin: 20px auto;"></div>
 

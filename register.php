@@ -24,11 +24,13 @@ if (isset($_POST['submit-btn'])) {
         if ($password != $cpassword) {
             $message[] = 'Passwords do not match';
         } else {
-            // Use single quotes for string values in SQL queries
+
+
+            
             $query = "INSERT INTO `users` (`name`, `email`, `password`) VALUES ('$name', '$email', '$hashedPassword')";
             if (mysqli_query($conn, $query)) {
                 header('Location: login.php?message=User+Created+Successfully');
-                exit(); // Ensure the script stops after redirect
+                exit(); 
             } else {
                 $message[] = 'Registration failed. Please try again.';
             }
