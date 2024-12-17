@@ -13,12 +13,7 @@ $admin_email = isset($_SESSION['admin_email']) ? $_SESSION['admin_email'] : 'Not
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin panel</title>
-    <script
-      src="https://kit.fontawesome.com/9152afbf8d.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- <link rel="stylesheet" href="fontawesome/css/all.min.css"> -->
-
+    <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
  </head>
