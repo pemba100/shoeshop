@@ -24,6 +24,8 @@ if(isset($_POST['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.min.css">
+
 <link rel="stylesheet" href="main.css">
 <body>
 <?php include 'header.php'; ?>
