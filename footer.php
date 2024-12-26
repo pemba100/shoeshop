@@ -18,7 +18,6 @@
                     <li>our difference</li>
                     <li>community matters </li>
                     <li>press</li>
-                    <li>blogs</li>
                 </ul>
             </div>
             <div class="card">
@@ -55,7 +54,7 @@
             </div>
         </div>
         <div class="bottom-footer" style = "display :flex ; justify-content : center ; align-items:center ; height : 50px" >
-            <p >all right reserved</p>
+            <p >All right reserved</p>
         </div>
      </footer>
 </body>
