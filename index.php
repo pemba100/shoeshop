@@ -92,7 +92,7 @@ if(isset($_POST['logout'])) {
        </div>
 
        <?php include 'homeshop.php'; ?>
-        <?php include 'footer.php'; ?>
+       <?php include 'footer.php'; ?>
 
 <script>
 
