@@ -16,7 +16,7 @@ $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : 'Not lo
 <body>
     <header class="header">
         <div class="flex">
-            <a href="" class="logo"> <img src="image/logo.jpeg" alt=""> </a>
+            <a href="" class="logo"> <img src="img/logo.jpeg" alt=""> </a>
             <nav class="navbar">
                 <a href="home.php">home</a>
                 <a href="shop.php"> shop</a>

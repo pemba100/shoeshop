@@ -20,7 +20,7 @@ $admin_email = isset($_SESSION['admin_email']) ? $_SESSION['admin_email'] : 'Not
 <body>
     <header class="header">
         <div class="flex">
-            <a href="admin_pannel.php" class="logo"> <img src="image/logo.jpeg" alt=""> </a>
+            <a href="admin_pannel.php" class="logo"> <img src="img/logo.jpeg" alt=""> </a>
             <nav class="navbar">
                 <a href="admin_pannel.php">home</a>
                 <a href="admin_product.php"> products</a>
