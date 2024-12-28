@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.min.css">
-    <link rel="stylesheet" href="main.css?version=1.0">
+    <link rel="stylesheet" href="main.css?version=2.0">
 </head>
 <body>
   <section class= " popular-brands">
@@ -61,7 +61,7 @@
         // Scroll left
         leftArrow.addEventListener("click", () => {
             brandsContent.scrollBy({
-                left: -300, // Scroll distance to the left
+                left: -400, // Scroll distance to the left
                 behavior: "smooth",
             });
         });
@@ -69,7 +69,7 @@
         // Scroll right
         rightArrow.addEventListener("click", () => {
             brandsContent.scrollBy({
-                left: 300, // Scroll distance to the right
+                left: 400, // Scroll distance to the right
                 behavior: "smooth",
             });
         });
