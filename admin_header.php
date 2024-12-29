@@ -3,6 +3,7 @@
 
 $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Guest';
 $admin_email = isset($_SESSION['admin_email']) ? $_SESSION['admin_email'] : 'Not logged in';
+
 ?>
 
 
