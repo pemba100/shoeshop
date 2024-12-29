@@ -13,6 +13,27 @@ body {
 
 /* header -------------------------------------------------------------------------------------------------------------- */
 
+.icons a sup {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translate(50%, -50%);
+    z-index: 1;
+}
+
+.icons a {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+
 .header {
     background-color: #34495e;
     color: #fff;
@@ -550,9 +571,9 @@ footer {
     justify-content: flex-end;
     gap: 1.5rem;
     position: absolute;
-    top: -10%;
+    top: 16%;
     right: 15px;
-    transform: translateY(0);
+    transform: translateY(-16%);
     z-index: 10;
 }
 
@@ -671,3 +692,127 @@ footer {
     color: white;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* --------------------------------------------------for displaying message already in wishlist---------------------------------------------------------------- */
+.message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message .close-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #721c24;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.message .close-btn:hover {
+    color: #f5c6cb;
+}
+
+/* -----------------------------------about.php---------------------------------------------------- */
+
+
+/* Banner Section */
+.banner2 {
+    background-color: gray;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.banner2 .detail2 h1 {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.banner2 a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.banner2 span {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+/* About Section */
+.about-us {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    display: flex;
+    height: 100%;  /* Ensures full height of parent container */
+}
+
+.about-row {
+    display: flex;
+    width: 100%;
+    height: 100%;  /* Ensures full height */
+}
+
+/* About Text Box */
+.about-box {
+    flex: 0 0 60%; /* 60% width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-title h1 {
+    font-size: 30px;
+    color: #ff6347;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border-left: 4px solid #ff7f50;
+    padding-left: 10px;
+}
+
+.about-title h2 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.about-box p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* About Image Box */
+.about-img-box {
+    flex: 0 0 40%; /* 40% width */
+    text-align: center;
+    overflow: hidden; /* To ensure image does not overflow */
+}
+
+.about-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the box without distortion */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

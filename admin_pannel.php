@@ -96,14 +96,7 @@ if(isset($_POST['logout'])) {
                     ?>
                 <h3><?php echo $num_of_admin; ?></h3>
                 <p>total admin</p>
-
             </div>
-
-
-
-
-
-
 
         </div>
 
