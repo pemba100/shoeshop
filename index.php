@@ -126,15 +126,15 @@ if(isset($_POST['add_to_cart'])){
       </div>
 
        <div class="story">
-        <div class="row">
-            <div class="box">
+        <div class="row1">
+            <div class="box1">
                 <span>Our story</span>
                 <h1>Crafting Excellence in Footwear Since 2024</h1>
                 <p>Welcome to Jutta Pasal, where quality meets craftsmanship. Since our inception in 2024, we have been dedicated to providing our customers with premium footwear that combines style, comfort, and durability. Every step of our journey is rooted in passion, innovation, and a commitment to excellence.</p>
             <p>From sourcing the finest materials to ensuring every pair fits perfectly, we take pride in delivering shoes that cater to your unique needs. Whether you’re stepping out for work, play, or adventure, our collection has something for everyone. Thank you for making us a part of your journey—one step at a time.</p>
             <a href="shop.php" class="btn">Shop Now</a>
             </div>
-            <div class="box">
+            <div class="box-img">
                 <img src="img/addidasshoe.jpg" alt="">
 
             </div>
@@ -165,7 +165,7 @@ if (!empty($message)) {
             messageBox.style.display = 'none';
         });
     });
-});
+  });
 
 </script>
 </body>
