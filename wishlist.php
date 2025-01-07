@@ -158,7 +158,7 @@ if (mysqli_num_rows($select_wishlist)>0) {
 <input type="hidden" name="product_price" value="<?php echo $fetch_wishlist['price']; ?>" >
 <input type="hidden" name="product_image" value="<?php echo $fetch_wishlist['image']; ?>" >
 <div class="icon">
-  <a href="view_page.php?pid=<?php echo $fetch_wishlist['id']; ?>" class=" fa-regular fa-eye" ></a>
+  <!-- <a href="view_page.php?pid=<?php echo $fetch_wishlist['id']; ?>" class=" fa-regular fa-eye" ></a> -->
   <a href="wishlist.php?delete=<?php echo $fetch_wishlist['pid'];?>"class="fa-regular fa-circle-xmark" onclick="return confirm('do you want to delete this product from your wishlist')" ></a>
   <button type="submit" name="add_to_cart" class="fa-solid fa-cart-shopping" ></button>
 
@@ -181,7 +181,20 @@ echo '<p class="empty">no products added yet!</p>';
 <?php include 'footer.php'; ?>
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const closeButtons = document.querySelectorAll('.close-btn');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const messageBox = button.parentElement;
+            messageBox.style.display = 'none';
+        });
+    });
+});
+
 </script>
+
+
 </body>
 
 </html>
