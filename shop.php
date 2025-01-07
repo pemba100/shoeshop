@@ -17,48 +17,86 @@ if(isset($_POST['logout'])) {
 
 
 //adding product in wishlist
-if(isset($_POST['add_to_wishlist'])){
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $product_image = $_POST['product_image'];
+// if(isset($_POST['add_to_wishlist'])){
+//     $product_id = $_POST['product_id'];
+//     $product_name = $_POST['product_name'];
+//     $product_price = $_POST['product_price'];
+//     $product_image = $_POST['product_image'];
 
-    $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
-    $cart_num = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+//     $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+//     $cart_num = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
-    if (mysqli_num_rows($wishlist_number)>0) {
-        $message[]='product already exist in wishlist';
-    } else if (mysqli_num_rows($cart_num)>0){
-        $message[]='product already exist in cart';
+//     if (mysqli_num_rows($wishlist_number)>0) {
+//         $message[]='product already exist in wishlist';
+//     } else if (mysqli_num_rows($cart_num)>0){
+//         $message[]='product already exist in cart';
 
-    } else {
-        mysqli_query($conn, "INSERT INTO `wishlist`(`user_id`,`pid`,`name`,`price`,`image`) VALUES('$user_id','$product_id','$product_name','$product_price','$product_image')");
-        $message[]='product successfully added  in your wishlist';
+//     } else {
+//         mysqli_query($conn, "INSERT INTO `wishlist`(`user_id`,`pid`,`name`,`price`,`image`) VALUES('$user_id','$product_id','$product_name','$product_price','$product_image')");
+//         $message[]='product successfully added  in your wishlist';
 
-    }
-}
+//     }
+// }
 
 //adding product in cart
-if(isset($_POST['add_to_cart'])){
+// if(isset($_POST['add_to_cart'])){
+//     $product_id = $_POST['product_id'];
+//     $product_name = $_POST['product_name'];
+//     $product_price = $_POST['product_price'];
+//     $product_image = $_POST['product_image'];
+//     $product_quantity= $_POST['product_quantity'];
+
+    
+//     $cart_num = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+
+//     if (mysqli_num_rows($cart_num)>0){
+//         $message[]='product already exist in cart';
+
+//     } else {
+//         mysqli_query($conn, "INSERT INTO `cart`(`user_id`,`pid`,`name`,`price`,`quantity`,`image`) VALUES('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
+//         $message[]='product successfully added  in your cart';
+
+//     }
+// }
+
+// adding product in wishlist
+if (isset($_POST['add_to_wishlist'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
-    $product_quantity= $_POST['product_quantity'];
 
-    
-    $cart_num = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+    // Check if the product exists in the wishlist
+    $wishlist_query = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE pid = '$product_id' AND user_id = '$user_id'") or die('query failed');
 
-    if (mysqli_num_rows($cart_num)>0){
-        $message[]='product already exist in cart';
-
+    if (mysqli_num_rows($wishlist_query) > 0) {
+        $message[] = 'Product already exists in your wishlist';
     } else {
-        mysqli_query($conn, "INSERT INTO `cart`(`user_id`,`pid`,`name`,`price`,`quantity`,`image`) VALUES('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
-        $message[]='product successfully added  in your cart';
-
+        // Add the product to the wishlist
+        mysqli_query($conn, "INSERT INTO `wishlist`(`user_id`, `pid`, `name`, `price`, `image`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
+        $message[] = 'Product successfully added to your wishlist';
     }
 }
 
+// adding product in cart
+if (isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['product_quantity'];
+
+    // Check if the product exists in the cart
+    $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE pid = '$product_id' AND user_id = '$user_id'") or die('query failed');
+
+    if (mysqli_num_rows($cart_query) > 0) {
+        $message[] = 'Product already exists in your cart';
+    } else {
+        // Add the product to the cart
+        mysqli_query($conn, "INSERT INTO `cart`(`user_id`, `pid`, `name`, `price`, `quantity`, `image`) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
+        $message[] = 'Product successfully added to your cart';
+    }
+}
 
 ?>
 <!DOCTYPE html>
