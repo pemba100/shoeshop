@@ -73,7 +73,7 @@ if (isset($_POST['update_order'])) {
         }
     }
     ?>
-<!-- 
+
     <div style="width: 90%; max-width: 600px; height: 2px; background-color: #ddd; margin: 20px auto;"></div>
     <section class="order-container" style="text-align: center; padding: 20px;">
     <h1 class="title" style="font-size: 24px; margin-bottom: 20px;">Total Orders</h1>
@@ -146,4 +146,4 @@ if (isset($_POST['update_order'])) {
     <div style="width: 90%; max-width: 600px; height: 2px; background-color: #ddd; margin: 20px auto;"></div>
 
 </body>
-</html> -->
+</html>

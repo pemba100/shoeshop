@@ -1222,4 +1222,73 @@ footer {
     background-color: #388e3c; 
     transform: scale(1);
   }
-  
+  /* ------------------------------contact------------------------------------------------ */
+  .contact {
+    background-image: url('img/conta.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin: 30px auto;
+    max-width: 700px;
+    color: #fff; 
+}
+
+.contact-address {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.contact-box,
+.contact-2box {
+    width: 50%;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inside-contactbox h1 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.inside-contactbox p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+}
+
+.contact-box i,
+.contact-2box i {
+    font-size: 2em;
+    color: #007bff; 
+    margin-bottom: 10px;
+    display: inline-block;
+}
+

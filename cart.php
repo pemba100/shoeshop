@@ -115,12 +115,12 @@ echo '<p class="empty">no products added yet!</p>';
   ?>
   </div>
   <div class="dlt">
-  <a href="cart.php?delete_all" class="btn2 onclick="return confirm('do you want to delete all items in your cart')">delete all</a>
+  <a href="cart.php?delete_all" class="btn2  <?php echo ($grand_total>1)?'':'disabled'?>" onclick="return confirm('do you want to delete all items in your cart')">delete all</a>
   </div>
   <div class="wishlist_total">
   <p>total amount payable : <span>$<?php echo  $grand_total; ?>/-</span></p>
   <a href="shop.php" class="continuebtn">continue shopping</a>
-  <a href="checkout.php?delete_all" class="btn3 <?php echo ($grand_total>1)?'':'disabled'?>" onclick="return confirm('do you want to delete all items in your wishlist')"> proceed to checkout</a>
+  <a href="checkout.php" class="btn3"> proceed to checkout</a>
   </div>
 </section> 
 <?php include 'footer.php'; ?>
