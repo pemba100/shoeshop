@@ -38,7 +38,7 @@ if ($user_id) {
         <div class="flex">
             <a href="" class="logo"> <img src="img/logo.jpeg" alt=""> </a>
             <nav class="navbar">
-                <a href="index.php">home</a>
+                <a href="index2.php">home</a>
                 <a href="shop.php"> shop</a>
                 <a href="order.php"> order</a>
                 <a href="about.php">About us</a>

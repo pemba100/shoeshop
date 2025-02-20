@@ -15,6 +15,7 @@ if(isset($_POST['order_btn'])){
     $number = mysqli_real_escape_string($conn, $_POST['number']);
     $method = mysqli_real_escape_string($conn, $_POST['method']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
+    $shoe_size = mysqli_real_escape_string($conn, $_POST['shoe_size']);
     $placed_on = date('d-M-Y');
      $cart_total=0;
      $cart_product[]='';
@@ -28,7 +29,8 @@ if(isset($_POST['order_btn'])){
         }
      }
      $total_products = implode(',', $cart_product);
-     mysqli_query($conn, "INSERT INTO `orders` (`user_id`,`name`,`number`,`email`,`method`,`address`,`total_products`,`total_price`,`placed_on`) VALUES('$user_id','$name','$number','$email','$method','$address','$total_product','$cart_total','$placed_on')");
+     mysqli_query($conn, "INSERT INTO `orders` (`user_id`, `name`, `number`, `email`, `method`, `address`, `shoe_size`, `total_products`, `total_price`, `placed_on`) 
+     VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$shoe_size', '$total_products', '$cart_total', '$placed_on')");
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id='$user_id'");
     $message[]='order placed successfully';
     header('location:checkout.php');  
@@ -107,6 +109,29 @@ if (!empty($message)) {
             <label>address</label>
             <input type="text" name="address" placeholder="enter your address " required>
         </div>
+        <label>Select Shoe Size</label>
+    <select name="shoe_size" required>
+        <option selected disabled>Select your shoe size</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>        
+
+    </select>
+</div>
         <input type="submit" name="order_btn" class="btn" value="order now ">
      </form>
 </div>

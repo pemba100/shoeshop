@@ -90,6 +90,7 @@ if (isset($_POST['update_order'])) {
                 <th style="padding: 10px; border: 1px solid #ddd;">Method</th>
                 <th style="padding: 10px; border: 1px solid #ddd;">Address</th>
                 <th style="padding: 10px; border: 1px solid #ddd;">Total Products</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Shoe Size</th>
                 <th style="padding: 10px; border: 1px solid #ddd;">Payment Status</th>
                 <th style="padding: 10px; border: 1px solid #ddd;">Actions</th>
             </tr>
@@ -110,6 +111,7 @@ if (isset($_POST['update_order'])) {
                         <td style="padding: 10px; border: 1px solid #ddd;"><?php echo $fetch_orders['method']; ?></td>
                         <td style="padding: 10px; border: 1px solid #ddd;"><?php echo $fetch_orders['address']; ?></td>
                         <td style="padding: 10px; border: 1px solid #ddd;"><?php echo $fetch_orders['total_products']; ?></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><?php echo $fetch_orders['shoe_size']; ?></td>
                         <td style="padding: 10px; border: 1px solid #ddd;">
                             <form method="post">
                                 <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
