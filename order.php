@@ -38,6 +38,7 @@ if(isset($_POST['logout'])) {
                 <p>address : <span><?php echo $fetch_orders['address'];?></span></p>
                 <p>payment method : <span><?php echo $fetch_orders['method'];?></span></p>
                 <p>your order : <span><?php echo $fetch_orders['total_products'];?></span></p>
+                <p>Size: <span><?php echo $fetch_orders['shoe_size']; ?></span></p>
                 <p>total price : <span><?php echo $fetch_orders['total_price'];?></span></p>
                 <p>payment_status : <span><?php echo $fetch_orders['payment_status'];?></span></p>
 
